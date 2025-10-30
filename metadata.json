@@ -1,0 +1,8 @@
+{
+  "name": "Upkeep AI",
+  "description": "Your smart partner for total home maintenance. Snap photos of appliance labels, get AI-powered care schedules, estimate repair costs, manage tasks, and connect with trusted local services.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
