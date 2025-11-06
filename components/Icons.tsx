@@ -48,7 +48,15 @@ export const LightbulbIcon = createIcon(<><path d="M9 18h6" /><path d="M10 22h4"
 export const KnowledgeBaseIcon = createIcon(<><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v15H6.5A2.5 2.5 0 0 1 4 17V4.5A2.5 2.5 0 0 1 6.5 2z" /></>);
 export const CopyIcon = createIcon(<><rect width="14" height="14" x="8" y="8" rx="2" ry="2" /><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /></>);
 export const FlaskConicalIcon = createIcon(<><path d="M10 2v7.31" /><path d="M14 9.31V2" /><path d="M8.5 2h7" /><path d="M14 9.31c.14.89.31 1.76.53 2.59" /><path d="M12 16a2.5 2.5 0 0 1-2.45-3.05" /><path d="M8.5 13.01c-.13-.42-.24-.85-.32-1.28" /><path d="m6.09 13.05-1.74.52a2.5 2.5 0 0 0-1.6 3.39l1.7 2.94A2.5 2.5 0 0 0 6.8 22h10.4a2.5 2.5 0 0 0 2.35-1.1l1.7-2.94a2.5 2.5 0 0 0-1.6-3.39l-1.74-.52" /></>);
-export const LogOutIcon = createIcon(<><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /><polyline points="16 17 21 12 16 7" /><line x1="21" y1="12" x2="9" y2="12" /></>);
 
+// Fix: Add the missing GoogleIcon component
+export const GoogleIcon: React.FC<IconProps> = (props) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" {...props}>
+        <path fill="#4285F4" d="M17.64 9.2c0-.63-.06-1.25-.16-1.84H9.18v3.48h4.74c-.2 1.18-.86 2.18-1.92 2.84v2.26h2.9c1.7-1.56 2.68-3.88 2.68-6.72z"/>
+        <path fill="#34A853" d="M9.18 18c2.43 0 4.47-.8 5.96-2.18l-2.9-2.26c-.8.54-1.84.86-3.06.86-2.34 0-4.32-1.58-5.04-3.7H1.1v2.34C2.62 15.98 5.64 18 9.18 18z"/>
+        <path fill="#FBBC05" d="M4.14 10.7c-.15-.45-.24-.92-.24-1.42s.09-.97.24-1.42V5.52H1.1C.4 6.8.02 8.32.02 9.28s.38 2.48 1.08 3.76l3.04-2.34z"/>
+        <path fill="#EA4335" d="M9.18 3.54c1.32 0 2.5.45 3.44 1.34l2.58-2.58C13.64.84 11.6.02 9.18.02 5.64.02 2.62 2.04 1.1 4.88l3.04 2.34c.72-2.12 2.7-3.7 5.04-3.7z"/>
+    </svg>
+);
 
 export default createIcon;

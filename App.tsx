@@ -14,7 +14,6 @@ import { DeepResearchModal } from './components/DeepResearchModal';
 import { UndoToast } from './components/UndoToast';
 import { WarrantyAlerts } from './components/WarrantyAlerts';
 import { ProTip } from './components/ProTip';
-import { LoginScreen } from './components/LoginScreen';
 import { analyzeImageForApplianceDetails, generateApplianceInfo, extractDetailsFromDocument, generateDeepResearchReport } from './services/geminiService';
 import { ApplianceDetails, SavedAppliance, LocalService, SavedService, ChatMessage, Document, GeneralTask, KnowledgeBaseItem, CareTask, ResearchReport } from './types';
 
@@ -81,8 +80,6 @@ const App: React.FC = () => {
     const [isOffline, setIsOffline] = React.useState(!navigator.onLine);
 
     const [undoState, setUndoState] = React.useState<{ appliance: SavedAppliance; index: number } | null>(null);
-    
-    const [isLoggedIn, setIsLoggedIn] = useLocalStorage('isLoggedIn', false);
 
     React.useEffect(() => {
         const handleOnline = () => setIsOffline(false);
@@ -94,9 +91,6 @@ const App: React.FC = () => {
             window.removeEventListener('offline', handleOffline);
         };
     }, []);
-
-    const handleLogin = () => setIsLoggedIn(true);
-    const handleLogout = () => setIsLoggedIn(false);
 
     const handleImageUpload = async (file: File) => {
         setAppState('analyzing');
@@ -386,10 +380,6 @@ const App: React.FC = () => {
                 return <ImageUpload onImageUpload={handleImageUpload} />;
         }
     };
-    
-    if (!isLoggedIn) {
-        return <LoginScreen onLogin={handleLogin} />;
-    }
 
     return (
         <div className="bg-slate-900 min-h-screen text-slate-100 font-sans">
@@ -397,7 +387,6 @@ const App: React.FC = () => {
                 onOpenGuide={() => setIsGuideOpen(true)}
                 onOpenKnowledgeBase={() => setIsKnowledgeBaseOpen(true)}
                 isOffline={isOffline}
-                onLogout={handleLogout}
             />
             
             <Dashboard>
